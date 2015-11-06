@@ -18,7 +18,7 @@ class UTD:
         }
 
         s.get('https://coursebook.utdallas.edu/' + id.lower(), headers=headers)
-        data = 'id=ce6303.501.16s&div=r-1childcontent&subaction=null'
+        data = 'id=' + id.lower() + '&div=r-1childcontent&subaction=null'
 
         r = s.post('https://coursebook.utdallas.edu/clips/clip-section.zog', headers=headers, data=data)
         avail = r.text.find('<b>Section Status:')
