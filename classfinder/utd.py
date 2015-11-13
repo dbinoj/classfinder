@@ -4,7 +4,8 @@ class UTD:
     status = None
     def __init__(self, id):
         s = requests.Session()
-
+        id = id.lower()
+        
         headers = {
             'Origin': 'https://coursebook.utdallas.edu',
             'Accept-Encoding': 'gzip, deflate',
@@ -17,8 +18,8 @@ class UTD:
             'Connection': 'keep-alive',
         }
 
-        s.get('https://coursebook.utdallas.edu/' + id.lower(), headers=headers)
-        data = 'id=' + id.lower() + '&div=r-1childcontent&subaction=null'
+        s.get('https://coursebook.utdallas.edu/' + id, headers=headers)
+        data = 'id=' + id + '&div=r-1childcontent&subaction=null'
 
         r = s.post('https://coursebook.utdallas.edu/clips/clip-section.zog', headers=headers, data=data)
         avail = r.text.find('<b>Section Status:')
