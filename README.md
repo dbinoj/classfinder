@@ -13,4 +13,4 @@ print class_instance.get_availability()
 Dev Docs:
 --------
 
-Add a new file in `classfinder` folder and implement a class. Include the class in __init__.py of the same folder.
+Add a new file in `classfinder` folder and implement a class. Include the class in `__init__.py` of the same folder.
